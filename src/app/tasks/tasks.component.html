@@ -1,0 +1,22 @@
+<p>tasks works!</p>
+<input type="number">
+<table class="table" border="1">
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>description</th>
+    <th>Add</th>
+  </tr>
+  <tr *ngFor="let p of listTask">
+    <td>{{p.id}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.dateD}}</td>
+    <td>{{p.dateF}}</td>
+    <td>{{p.status}}</td>
+    <td><button class="btn btn-primary" [routerLink]="['/DetailsTask',p.id]">Detail</button></td>
+    <td> <button (click)="delete(p.id)">Delete</button></td>
+    <td><button class="btn btn-primary" [routerLink]="['/UpdateTask',p.id]">update</button></td>
+    <td><button class="btn btn-primary" [routerLink]="['/AddTask',p.id]">Add</button></td>
+
+  </tr>
+</table>

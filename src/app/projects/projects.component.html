@@ -1,0 +1,16 @@
+<input type="number">
+<table class="table" border="1">
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>description</th>
+  <th>Add</th>
+  </tr>
+  <tr *ngFor="let p of listProject">
+    <td>{{p.id}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.description}}</td>
+    <td><button class="btn btn-primary" [routerLink]="['/AddTask',p.id]">Add</button></td>
+
+  </tr>
+</table>

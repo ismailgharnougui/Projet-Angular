@@ -1,0 +1,27 @@
+<p>update-task works!</p>
+<p>add-task works!</p>
+<form [formGroup]="addForm">
+  <div class="form-group">
+    <label>Id</label>
+    <input type="text" class="form-control" placeholder="Enter id" formControlName="id">
+  </div>
+  <div class="form-group">
+    <label>title</label>
+    <input type="text" class="form-control" placeholder="Enter description" formControlName="title">
+    <p *ngIf="addForm.controls['title'].hasError('required')">title is required</p>
+    <p *ngIf="addForm.controls['title'].hasError('minlength')">title must have at least 6 characters</p>
+  </div>
+  <div class="form-group">
+    <label>dateD</label>
+    <input type="text" class="form-control" placeholder="Enter dateD" formControlName="dateD">
+  </div>
+  <div class="form-group">
+    <label>dateF</label>
+    <input type="text" class="form-control" placeholder="Enter dateF" formControlName="dateF">
+  </div>
+  <div class="form-group">
+    <label>status</label>
+    <input type="text" class="form-control" placeholder="Enter status" formControlName="status">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid" (click)="save()">Update</button>
+</form>
